@@ -21,6 +21,11 @@ public class EventController {
         this.eventService = eventService;
     }
 
+    @GetMapping("/")
+    public String home() {
+        return "KH Patil Event Management Backend is running";
+    }
+
     @GetMapping("/get-all-events")
     public ResponseEntity<ApiResponseDTO> getAllEvents()
     {
