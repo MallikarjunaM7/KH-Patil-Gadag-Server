@@ -32,7 +32,11 @@ public class TeamEntity {
     @Column(name = "registered_at")
     private LocalDateTime registeredAt;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(
+    mappedBy = "team",
+    cascade = CascadeType.ALL,
+    orphanRemoval = true
+)
     private List<ParticipantEntity> participants;
 
     @PrePersist

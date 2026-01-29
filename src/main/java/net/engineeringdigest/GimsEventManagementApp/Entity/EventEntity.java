@@ -43,6 +43,10 @@ public class EventEntity {
     @Column(name = "max_team_size", nullable = false)
     private int maxTeamSize;
 
-    @OneToMany(mappedBy = "event")
+    @OneToMany(
+    mappedBy = "event",
+    cascade = CascadeType.ALL,
+    orphanRemoval = true
+)
     private List<TeamEntity> teams;
 }
